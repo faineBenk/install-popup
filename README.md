@@ -6,3 +6,4 @@ what to be done:
 	- make script run as daemon: all installing packages are under condition. if installation takes more than 15s, result of installation will be showed in pop-up window
 	- make script accept several packages to install
 	- leave for script availability to work with specific packages
+	- sound notifiction when all packages are installed (mb different for success and failure)
