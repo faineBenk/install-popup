@@ -11,31 +11,26 @@ print(type(os.environ.get('PCKG_ARR')))
 pckg_arr = os.environ['PCKG_ARR']
 print(pckg_arr)
 
+pckg_arr_result = pckg_arr.split(";")
 
-def create_window(result, already_exists, process_pckg):
-	process_pckg = process_pckg.split()
-	print(type(process_pckg))
-	for i in process_pckg:
-		s = ""
-		if (already_exists=='0'):
-			print("package already exists")
-			window = QLabel(process_pckg + "\nis already exists in system.")
-			# s+= name + " is already exists in system.\n"
+print(pckg_arr_result)
 
-		elif (already_exists=='1'):
-			print("package was successfully installed!")
-			window = QLabel(process_pckg + "\nwas succesfully installed!")
-			# s+= name + " was succesfully installed!\n"
+def create_window(result, already_exists,  pckg_arr_result):
+	s =""
+	for i in range(len(pckg_arr_result)-1):
+		pckg_list = pckg_arr_result[i].split(" ")
+		if (pckg_list[1]=='0'):
+			s+= pckg_list[0] + ": is already exists in system.\n"
+		elif (pckg_list[1]=='1' and pckg_list[2]!='1'):
+			s+= pckg_list[0] + ": was succesfully installed!\n"
 		else:
-			print("Oops.")
-			window = QLabel(process_pckg + "\nwas not installed.\nTry again.")
-			# s+= name + " was not installed. Try again.\n"
+			s+= pckg_list[0] + ": was not installed. This doesn`t exist in AUR.\n"
 
-	# window = QLabel(s)
+	window = QLabel(s)
 	window.setGeometry(50,50,150,50)
 	window.show()
 	app.exec()
 
 
 
-create_window(result, already_exists, process_pckg)
+create_window(result, already_exists, pckg_arr_result)
