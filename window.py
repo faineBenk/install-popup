@@ -1,5 +1,5 @@
 import PyQt5
-import sys, os
+import sys, os, subprocess
 from PyQt5.QtWidgets import QApplication, QLabel
 
 app = QApplication(sys.argv)
@@ -7,21 +7,13 @@ app = QApplication(sys.argv)
 already_exists = os.environ['IS_ALREADY_EXISTS']
 result = os.environ['RES']
 process_pckg = os.environ['PROCESS_PCKGS']
+print(type(os.environ.get('PCKG_ARR')))
+pckg_arr = os.environ['PCKG_ARR']
+print(pckg_arr)
 
-# test_var_exists = os.environ['IS_EXISTS']
-# pckg_dict = os.environ['PCKG_DICT']
-
-# process_pckg = [
-# {name: 'pckg_name', 
-# res: 'res', 
-# already_exists: '1'},
-# {name: 'pckg_name', 
-# res: 'res', 
-# already_exists: '1'}
-# ]
 
 def create_window(result, already_exists, process_pckg):
-	# process_pckg = process_pckg.split()
+	process_pckg = process_pckg.split()
 	print(type(process_pckg))
 	for i in process_pckg:
 		s = ""
