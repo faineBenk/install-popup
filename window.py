@@ -8,13 +8,9 @@ app = QApplication(sys.argv)
 already_exists = os.environ['IS_ALREADY_EXISTS']
 result = os.environ['RES']
 process_pckg = os.environ['PROCESS_PCKGS']
-print(type(os.environ.get('PCKG_ARR')))
 pckg_arr = os.environ['PCKG_ARR']
-print(pckg_arr)
-
 pckg_arr_result = pckg_arr.split(";")
 
-print(pckg_arr_result)
 
 class Processer:
 
