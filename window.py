@@ -1,9 +1,7 @@
 import PyQt5
 import sys,os
-from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtWidgets import QApplication, QLabel, QScrollArea, QMainWindow
 
-app = QApplication(sys.argv)
 
 already_exists = os.environ['IS_ALREADY_EXISTS']
 result = os.environ['RES']
