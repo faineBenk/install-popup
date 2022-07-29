@@ -1,5 +1,5 @@
 # install-popup
-can be used while downloading large packages: you won`t waste time staring at terminal while package is downloading. 
+can be used while downloading large packages: you won`t waste time staring at terminal while package(s) is(are) downloading. 
 
 there are 2 options:
 - process file with bunch of packages
