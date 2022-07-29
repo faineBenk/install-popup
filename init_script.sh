@@ -12,6 +12,19 @@ compose_pckg_arr() {
 }
 
 
+check_pyqt() {
+	res_check_pyqt=$(pip list | grep PyQt | head -n 1 | awk {'print$1'})
+	echo $res_check_pyqt
+	if [ $res_check_pyqt == "PyQt5" ]; then 
+		echo "-----PyQt is already installed-----"
+	else
+		pip install PyQt5
+	fi
+}
+
+check_pyqt
+
+
 for i in $PROCESS_PCKGS; do
 	echo  -----$i is checkouted now-----
 
