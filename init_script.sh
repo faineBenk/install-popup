@@ -55,8 +55,8 @@ process_input() {
 	# if file - PROCESS_PCKGS should be read as file line by line, 
 	# if array - as for every element in line 
 	if [ $# -ge 2 ]; then
-    	echo "-----Packages are processing from list.-----"
-    	export PROCESS_PCKGS="$@"
+    		echo "-----Packages are processing from list.-----"
+    		export PROCESS_PCKGS="$@"
 		process_pckg PROCESS_PCKGS
 	else 
 		echo "-----There is file with packages processing-----"
