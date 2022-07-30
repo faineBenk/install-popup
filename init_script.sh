@@ -52,21 +52,17 @@ process_pckg() {
 
 
 process_input() {
-	# if file - PROCESS_PCKGS should be read as file, 
-	# if array - as $@
+	# if file - PROCESS_PCKGS should be read as file line by line, 
+	# if array - as for every element in line 
 	if [ $# -ge 2 ]; then
     	echo "-----Packages are processing from list.-----"
     	export PROCESS_PCKGS="$@"
-    	echo $PROCESS_PCKGS
 		process_pckg PROCESS_PCKGS
 	else 
 		echo "-----There is file with packages processing-----"
 		file="$1"
-		value=$(cat $file)
-		echo $value
-		export PROCESS_PCKGS=$value
+		export PROCESS_PCKGS=$(cat $file)
 		process_pckg PROCESS_PCKGS
-		# export 
 	fi
 }
 
